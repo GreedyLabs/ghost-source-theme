@@ -3387,3 +3387,20 @@ body[class^="gh-font-heading"]:not(.gh-font-heading-fira-sans):not(.gh-font-head
 .gh-button-share:hover {
     border-color: rgba(0, 0, 0, 0.5);
 }
+
+/* ----------------------------------------------------------
+   Hide membership / subscription UI.
+   Portal stays enabled only so the native Share button (#/share)
+   works; comments are handled by giscus. The Share button uses
+   data-portal="share", which is intentionally NOT hidden here.
+   ---------------------------------------------------------- */
+.gh-navigation-members,            /* top nav: Sign in / Subscribe / Account */
+.gh-cta,                           /* homepage subscribe call-to-action */
+.gh-footer-signup,                 /* footer subscribe form */
+[data-members-form],               /* any email subscription form (e.g. landing hero) */
+[data-portal="signin"],
+[data-portal="signup"],
+[data-portal="account"],
+[data-portal="upgrade"] {
+    display: none !important;
+}
